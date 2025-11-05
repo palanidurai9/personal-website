@@ -38,7 +38,7 @@ const App: React.FC = () => {
         <section className="min-h-screen flex flex-col items-center justify-center text-center py-20">
           <ScrollReveal>
             <img 
-              src="/meeee.png" 
+              src="/palani-durai-founder-of-luxefiz.png" 
               alt="Palani Durai" 
               className="w-24 h-24 md:w-32 md:h-40 rounded-full object-cover mx-auto mb-8 shadow-md"
             />
