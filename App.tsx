@@ -12,7 +12,7 @@ const App: React.FC = () => {
       title: "Luxefiz - Brand Identity & Web Platform",
       description: "A comprehensive digital presence for a modern marketing agency, featuring a bold brand identity and a performant client-facing website built with React and Tailwind CSS.",
       imageUrl: "https://picsum.photos/seed/luxefiz/600/400",
-      link: "https://luxefiz.netlify.app/"
+      link: "https://www.luxefiz.com/"
     },
     {
       title: "FinSights - Financial Content Hub",
@@ -66,7 +66,7 @@ const App: React.FC = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.4}>
             <a 
-              href="https://luxefiz.vercel.app/" 
+              href="https://www.luxefiz.com/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group inline-block mt-10 px-8 py-3 rounded-full border border-[#9f009f] text-[#9f009f] font-medium text-base transition-all duration-300 ease-in-out hover:bg-[#9f009f] hover:text-white"
