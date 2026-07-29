@@ -1,137 +1,220 @@
 import React from 'react';
+import Navbar from './components/Navbar';
 import ScrollReveal from './components/ScrollReveal';
 import ProjectCard from './components/ProjectCard';
+import ServiceCard from './components/ServiceCard';
 
 const App: React.FC = () => {
-  const skills = [
-    'UI/UX Design', 'Branding', 'Web Development', 'React', 'Tailwind CSS', 'Financial Content'
+  const services = [
+    { title: "Brand Identity", description: "Creating memorable brands with strategy, visual consistency, and a strong digital presence." },
+    { title: "Websites", description: "Fast, responsive, SEO-friendly websites built with modern technologies and exceptional user experience." },
+    { title: "SaaS Products", description: "Scalable software platforms designed to solve real business problems with clean architecture and intuitive workflows." },
+    { title: "AI Solutions", description: "Integrating artificial intelligence into products to automate workflows, improve productivity, and deliver smarter user experiences." },
+    { title: "UI / UX Design", description: "Designing interfaces that balance aesthetics, usability, accessibility, and performance." },
+    { title: "Product Development", description: "From idea validation to deployment, building complete digital products that are ready for real-world users." }
   ];
 
   const projects = [
-    {
-      title: "Luxefiz - Brand Identity & Web Platform",
-      description: "A comprehensive digital presence for a modern marketing agency, featuring a bold brand identity and a performant client-facing website built with React and Tailwind CSS.",
-      imageUrl: "https://picsum.photos/seed/luxefiz/600/400",
-      link: "https://www.luxefiz.com/"
-    },
-    {
-      title: "FinSights - Financial Content Hub",
-      description: "An editorial platform designed to demystify stock market concepts for beginners. The UI/UX focuses on readability and clear data visualization to enhance learning.",
-      imageUrl: "https://picsum.photos/seed/finsights/600/400",
-      link: "#"
-    },
-    {
-      title: "SaasKit - UI/UX for a Development Kit",
-      description: "A clean and developer-friendly interface for a SaaS boilerplate. The design system prioritizes scalability, consistency, and ease of use for rapid application development.",
-      imageUrl: "https://picsum.photos/seed/saaskit/600/400",
-      link: "#"
-    }
+    { title: "Luxefiz", tags: "Branding • Web Development • Strategy", description: "A digital agency focused on branding, websites, digital marketing, SaaS development, and business growth solutions.", imageUrl: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop" },
+    { title: "ParkVoid", tags: "Marketplace • SaaS • Mobile First", description: "A smart parking marketplace connecting vehicle owners with people who have unused parking spaces.", imageUrl: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070&auto=format&fit=crop" },
+    { title: "DealPicks AI", tags: "AI • Automation • E-commerce", description: "An AI-powered platform that discovers, filters, and shares the best online deals through intelligent automation.", imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" },
+    { title: "Personal Portfolio", tags: "Portfolio • UI/UX • Development", description: "My digital space where I document projects, experiments, ideas, and the journey of building products.", imageUrl: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop" }
   ];
-  
-  const badges = ['Web Design', 'UI/UX', 'Branding', 'Marketing', 'Saas Development', 'Web Development', 'Financial Content'];
+
+  const frontendTech = ["React", "Next.js", "HTML", "CSS", "JavaScript", "Tailwind CSS"];
+  const backendTech = ["Node.js", "Express", "Firebase", "Supabase", "REST APIs"];
+  const databaseTech = ["Firestore", "Supabase PostgreSQL", "MySQL"];
+  const designTech = ["Figma", "Canva", "Brand Identity", "UI Design"];
+  const devTech = ["Git", "GitHub", "Vercel", "Netlify", "FlutterFlow", "AI Integration"];
 
   return (
-    <div className="bg-white text-[#111111] overflow-x-hidden">
-      <main className="max-w-5xl mx-auto px-6">
-        
-        {/* Hero Section */}
-        <section className="min-h-screen flex flex-col items-center justify-center text-center py-20">
-          <ScrollReveal>
-            <img 
-              src="/palani-durai-founder-of-luxefiz.png" 
-              alt="Palani Durai" 
-              className="w-24 h-24 md:w-32 md:h-40 rounded-full object-cover mx-auto mb-8 shadow-md"
-            />
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <h1 className="text-5xl md:text-7xl font-serif font-medium tracking-tight">
-              Palani Durai
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <p className="mt-4 text-base md:text-lg max-w-2xl mx-auto text-gray-700">
-              Digital Branding, Web Design & Financial Content
-              <br />
-              <span className="text-[#9f009f]">Founder of Luxefiz</span>
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.3}>
-            <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 mt-8 max-w-5xl">
-              {badges.map((badge, index) => (
-                <span key={index} className="text-xs md:text-sm text-gray-600 border border-gray-300 rounded-full px-4 py-1.5 transition-colors hover:bg-gray-100">
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={0.4}>
-            <a 
-              href="https://www.luxefiz.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group inline-block mt-10 px-8 py-3 rounded-full border border-[#9f009f] text-[#9f009f] font-medium text-base transition-all duration-300 ease-in-out hover:bg-[#9f009f] hover:text-white"
-            >
-              Visit Luxefiz
-            </a>
-          </ScrollReveal>
-        </section>
+    <>
+      <Navbar />
 
-        {/* About Section */}
-        <section id="about" className="py-24 md:py-32 ">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-serif text-center mb-12">
-              The Intersection of Code, Creativity, and Capital.
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <p className="text-lg md:text-xl text-gray-800 max-w-3xl mx-auto leading-relaxed text-center">
-              I am Palani Durai, a B.Tech IT student from Coimbatore with a distinct passion for building exceptional digital identities. As the founder of Luxefiz, I specialize in transforming ideas into tangible realities through strategic branding, intuitive web design, and robust SaaS development. My work is driven by a minimalist philosophy and an obsession with detail. Beyond the digital canvas, I dedicate my time to demystifying the Indian stock market, creating accessible financial content for aspiring investors.
-            </p>
-          </ScrollReveal>
-        </section>
-
-
-        {/* Projects Section */}
-        <section id="projects" className="py-24 md:py-32">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-serif text-center mb-12">
-              Selected Works
-            </h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-12">
-            {projects.map((project, index) => (
-              <ScrollReveal key={project.title} delay={index * 0.1}>
-                <ProjectCard {...project} />
-              </ScrollReveal>
-            ))}
+      <main>
+        {/* 1. Hero */}
+        <section className="hero">
+          <div className="container text-center">
+            <ScrollReveal>
+              <div className="section-label">Palani Durai</div>
+              <p style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', fontWeight: 500 }}>Founder of Luxefiz • Product Builder • Full-Stack Developer</p>
+              <h1 className="hero-title text-gradient" style={{ margin: '0 auto 1.5rem auto' }}>Building Digital Products That Make Businesses Grow.</h1>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <p className="hero-subtitle">
+                I help startups, creators, and businesses transform ideas into modern digital products through branding, websites, SaaS platforms, and AI-powered solutions. Every project is crafted with simplicity, performance, and long-term scalability at its core.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="hero-buttons">
+                <a href="#projects" className="btn btn-primary">View Projects</a>
+                <a href="#contact" className="btn btn-secondary">Let's Work Together</a>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
-        
-        {/* Contact Section */}
-        <section id="contact" className="py-24 md:py-32 text-center">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-serif mb-6">
-              Let's Create Together.
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <a 
-              href="mailto:rpd.palani.durai@gmail.com" 
-              className="text-xl md:text-2xl text-[#9f009f] inline-block relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bottom-0 after:left-0 after:bg-[#9f009f] after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-            >
-              palaniduraiir@gmail.com
-            </a>
-          </ScrollReveal>
+
+        {/* 2. About */}
+        <section id="about" style={{ background: 'var(--bg-accent)' }}>
+          <div className="container">
+            <ScrollReveal>
+              <div className="section-label text-center">About Me</div>
+              <h2 className="section-title text-center">About Me</h2>
+            </ScrollReveal>
+            <div className="grid-2" style={{ alignItems: 'center', marginTop: '3rem' }}>
+              <ScrollReveal>
+                <div className="glass-card" style={{ padding: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                  <img 
+                    src="/palani-durai-founder-of-luxefiz.png" 
+                    alt="Palani Durai" 
+                    style={{ 
+                      width: '100%', 
+                      maxWidth: '300px', 
+                      borderRadius: 'var(--radius-md)',
+                      filter: 'grayscale(20%)'
+                    }} 
+                  />
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.1}>
+                <div style={{ padding: '1rem 0' }}>
+                  <p>I'm Palani Durai, founder of Luxefiz, where I build digital experiences that combine design, technology, and business strategy.</p>
+                  <p>I enjoy taking ideas from concept to launch—designing intuitive interfaces, developing scalable applications, and creating brands that leave a lasting impression.</p>
+                  <p>Whether it's a startup website, SaaS platform, AI solution, or complete digital identity, I focus on building products that are clean, fast, reliable, and built for real users.</p>
+                  <p>Every project is approached with attention to detail, thoughtful problem-solving, and a commitment to delivering meaningful results.</p>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. Philosophy */}
+        <section>
+          <div className="container text-center" style={{ maxWidth: '800px' }}>
+            <ScrollReveal>
+              <div className="section-label">My Philosophy</div>
+              <h2 className="section-title text-gradient" style={{ marginBottom: '2rem' }}>Great products aren't created by adding more. <br/><span style={{color: 'var(--text-secondary)'}}>They're created by removing distractions.</span></h2>
+              <p style={{ fontSize: '1.25rem', marginBottom: '2rem' }}>I believe every interface should be clear, every interaction should feel natural, and every feature should exist for a reason.</p>
+              <p style={{ fontSize: '1.25rem', color: 'var(--text-primary)' }}>Good design attracts attention.<br/>Great products earn trust.</p>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* 4. Services */}
+        <section id="services" style={{ background: 'var(--bg-accent)' }}>
+          <div className="container text-center">
+            <ScrollReveal>
+              <div className="section-label">What I Do</div>
+              <h2 className="section-title">What I Build</h2>
+            </ScrollReveal>
+            <div className="grid-2" style={{ textAlign: 'left', marginTop: '4rem' }}>
+              {services.map((service, idx) => (
+                <ScrollReveal key={idx} delay={idx * 0.1}>
+                  <ServiceCard title={service.title} description={service.description} />
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Featured Projects */}
+        <section id="projects">
+          <div className="container text-center">
+            <ScrollReveal>
+              <div className="section-label">Featured Projects</div>
+              <h2 className="section-title">Featured Projects</h2>
+            </ScrollReveal>
+            <div className="grid-2" style={{ textAlign: 'left', marginTop: '4rem' }}>
+              {projects.map((project, idx) => (
+                <ScrollReveal key={idx} delay={idx * 0.1}>
+                  <ProjectCard 
+                    title={project.title} 
+                    tags={project.tags} 
+                    description={project.description} 
+                    imageUrl={project.imageUrl}
+                  />
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 6. Technologies */}
+        <section style={{ background: 'var(--bg-accent)' }}>
+          <div className="container text-center">
+            <ScrollReveal>
+              <div className="section-label">Skills</div>
+              <h2 className="section-title">Technologies & Tools</h2>
+            </ScrollReveal>
+            <div className="grid-2" style={{ textAlign: 'left', marginTop: '4rem' }}>
+              <ScrollReveal delay={0.1}>
+                <h3 style={{ marginBottom: '1rem' }}>Frontend</h3>
+                <div className="tech-container" style={{ marginBottom: '2rem' }}>
+                  {frontendTech.map(tech => <span key={tech} className="tech-pill">{tech}</span>)}
+                </div>
+                <h3 style={{ marginBottom: '1rem' }}>Backend</h3>
+                <div className="tech-container">
+                  {backendTech.map(tech => <span key={tech} className="tech-pill">{tech}</span>)}
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <h3 style={{ marginBottom: '1rem' }}>Databases</h3>
+                <div className="tech-container" style={{ marginBottom: '2rem' }}>
+                  {databaseTech.map(tech => <span key={tech} className="tech-pill">{tech}</span>)}
+                </div>
+                <h3 style={{ marginBottom: '1rem' }}>Design</h3>
+                <div className="tech-container" style={{ marginBottom: '2rem' }}>
+                  {designTech.map(tech => <span key={tech} className="tech-pill">{tech}</span>)}
+                </div>
+                <h3 style={{ marginBottom: '1rem' }}>Development</h3>
+                <div className="tech-container">
+                  {devTech.map(tech => <span key={tech} className="tech-pill">{tech}</span>)}
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. Why Work With Me */}
+        <section>
+          <div className="container text-center" style={{ maxWidth: '800px' }}>
+            <ScrollReveal>
+              <div className="section-label">Why Choose Me</div>
+              <h2 className="section-title">I don't just build websites.<br /><span className="text-gradient">I build complete digital products.</span></h2>
+              <p>From branding and user experience to development and deployment, I focus on delivering solutions that are modern, scalable, and aligned with business goals.</p>
+              <p>Every project is built with performance, maintainability, and long-term growth in mind.</p>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* 8. Contact */}
+        <section id="contact" style={{ background: 'var(--bg-accent)' }}>
+          <div className="container text-center">
+            <ScrollReveal>
+              <div className="section-label">Contact</div>
+              <h2 className="section-title text-gradient">Let's Build Something Great Together.</h2>
+              <p style={{ maxWidth: '600px', fontSize: '1.25rem', margin: '0 auto 1.5rem auto' }}>Whether you're launching a startup, growing your business, or turning an idea into reality, I'd love to hear your story.</p>
+              <p style={{ maxWidth: '600px', fontSize: '1.25rem', margin: '0 auto 3rem auto' }}>Let's create something meaningful.</p>
+              <a href="mailto:palaniduraiir@gmail.com" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '16px 32px' }}>
+                📧 palaniduraiir@gmail.com
+              </a>
+            </ScrollReveal>
+          </div>
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="text-center py-8 border-t border-gray-200">
-        <p className="text-gray-500">
-          &copy; {new Date().getFullYear()} Palani Durai (RPD). All rights reserved.
-        </p>
+      {/* 9. Footer */}
+      <footer className="footer">
+        <div className="container">
+          <ScrollReveal>
+            <div className="footer-title" style={{ marginBottom: '0.5rem' }}>Palani Durai</div>
+            <div className="footer-text" style={{ marginBottom: '1rem' }}>Founder of Luxefiz</div>
+            <div className="footer-text" style={{ maxWidth: '400px', margin: '0 auto 2rem auto' }}>Building modern digital products with design, technology, and purpose.</div>
+            <div className="footer-text">© 2026 Palani Durai. All Rights Reserved.</div>
+          </ScrollReveal>
+        </div>
       </footer>
-    </div>
+    </>
   );
 };
 

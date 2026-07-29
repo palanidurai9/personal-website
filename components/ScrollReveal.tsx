@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState, ReactNode } from 'react';
 
 interface ScrollRevealProps {
@@ -40,10 +39,12 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, delay = 0, thresh
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-      }`}
-      style={{ transitionDelay: `${delay}s` }}
+      style={{ 
+        transition: 'all 1s cubic-bezier(0.165, 0.84, 0.44, 1)',
+        transitionDelay: `${delay}s`,
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
+      }}
     >
       {children}
     </div>
