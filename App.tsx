@@ -37,7 +37,7 @@ const App: React.FC = () => {
           <div className="container text-center">
             <ScrollReveal>
               <div className="section-label">Palani Durai</div>
-              <p style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', fontWeight: 500 }}>Founder of Luxefiz • Product Builder • Full-Stack Developer</p>
+              <p style={{ color: 'var(--text-primary)', marginBottom: '1.5rem', fontWeight: 500 }}>Founder of Luxefiz • Community Builder • Full-Stack Developer</p>
               <h1 className="hero-title text-gradient" style={{ margin: '0 auto 1.5rem auto' }}>Building Digital Products That Make Businesses Grow.</h1>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
