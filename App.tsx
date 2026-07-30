@@ -47,7 +47,7 @@ const App: React.FC = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <div className="hero-buttons">
-                <a href="#projects" className="btn btn-primary">View Projects</a>
+                <a href="https://signal.group/#CjQKIHyZTBSJY6B8bfQjDUelptgaM_Ut3RJ0ZSPzvMzUCZ2TEhAA9nhmxiC-ms8UjV8VBgnQ" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Join Our Community</a>
                 <a href="#contact" className="btn btn-secondary">Let's Work Together</a>
               </div>
             </ScrollReveal>
@@ -187,7 +187,51 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        {/* 8. Contact */}
+        {/* 8. Community */}
+        <section id="community">
+          <div className="container text-center">
+            <ScrollReveal>
+              <div className="community-container">
+                <div className="community-bg-elements">
+                  <div className="community-node community-node-1"></div>
+                  <div className="community-node community-node-2"></div>
+                  <div className="community-node community-node-3"></div>
+                </div>
+                <div className="community-content">
+                  <div className="section-label">Join Our Community</div>
+                  <h2 className="section-title" style={{ marginBottom: '1.5rem' }}>Learn. Grow. <span className="text-gradient">Succeed.</span></h2>
+                  <p style={{ maxWidth: '700px', margin: '0 auto 2rem auto', fontSize: '1.125rem', color: 'var(--text-secondary)' }}>
+                    Join a community of passionate individuals exploring blockchain technology, cryptocurrency, entrepreneurship, and long-term financial growth. Whether you're just starting your journey or looking to deepen your knowledge, our community is designed to help you learn, connect with like-minded people, and stay informed in the fast-moving digital economy.
+                  </p>
+                  
+                  <div className="community-highlights">
+                    {[
+                      "Blockchain & Cryptocurrency Education",
+                      "Financial Growth Insights",
+                      "Market Trends & Industry Updates",
+                      "Networking with Like-Minded Individuals",
+                      "Exclusive Learning Resources",
+                      "Community Events & Discussions"
+                    ].map((item, i) => (
+                      <div key={i} className="community-highlight-item">
+                        <span className="community-highlight-icon">✦</span>
+                        <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p style={{ maxWidth: '700px', margin: '0 auto 3rem auto', fontSize: '1.125rem', color: 'var(--text-secondary)' }}>
+                    We're building a community that believes in continuous learning, meaningful connections, and sustainable financial growth. Together, we explore opportunities, share knowledge, and support one another on the journey toward success.
+                  </p>
+
+                  <a href="https://signal.group/#CjQKIHyZTBSJY6B8bfQjDUelptgaM_Ut3RJ0ZSPzvMzUCZ2TEhAA9nhmxiC-ms8UjV8VBgnQ" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ fontSize: '1.1rem', padding: '16px 36px' }}>Join Our Community</a>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* 9. Contact */}
         <section id="contact" style={{ background: 'var(--bg-accent)' }}>
           <div className="container text-center">
             <ScrollReveal>
@@ -203,7 +247,7 @@ const App: React.FC = () => {
         </section>
       </main>
 
-      {/* 9. Footer */}
+      {/* 10. Footer */}
       <footer className="footer">
         <div className="container">
           <ScrollReveal>

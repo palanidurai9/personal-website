@@ -151,8 +151,9 @@ p {
 
 .btn-primary:hover {
   background: #FFF;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255,255,255,0.15);
+  color: var(--bg-color);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.25), 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .btn-secondary {
@@ -162,8 +163,11 @@ p {
 }
 
 .btn-secondary:hover {
-  border-color: var(--text-primary);
-  background: rgba(255,255,255,0.05);
+  border-color: #FFF;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  color: #FFF;
 }
 
 /* Floating Navbar (Planbay Style Pill) */
@@ -406,4 +410,114 @@ p {
 .footer-text {
   font-size: 1rem;
   color: var(--text-secondary);
+}
+
+/* Community Section */
+.community-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 4rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .community-container {
+    padding: 6rem 4rem;
+  }
+}
+
+.community-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.community-node {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: floatNode 20s infinite ease-in-out alternate;
+  opacity: 0.5;
+}
+
+.community-node-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(0, 112, 243, 0.4) 0%, rgba(0,0,0,0) 70%);
+}
+
+.community-node-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(248, 28, 229, 0.3) 0%, rgba(0,0,0,0) 70%);
+  animation-delay: -5s;
+}
+
+.community-node-3 {
+  width: 250px;
+  height: 250px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(0,0,0,0) 70%);
+  animation-delay: -10s;
+}
+
+@keyframes floatNode {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.community-content {
+  position: relative;
+  z-index: 1;
+}
+
+.community-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 3rem auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .community-highlights {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.community-highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all var(--transition-fast);
+}
+
+.community-highlight-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-4px);
+}
+
+.community-highlight-icon {
+  color: var(--text-primary);
+  font-size: 1.25rem;
 }
